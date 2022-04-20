@@ -73,11 +73,13 @@ class DetailScreen extends StatelessWidget {
                           ? SizedBox(
                               width: double.infinity,
                               child: ElevatedButton(
-                                onPressed: () async {
-                                  vm.image = await _picker.pickImage(
-                                      source: ImageSource.gallery);
-                                  vm.stateUpdate();
-                                },
+                                onPressed: vm.enabled
+                                    ? () async {
+                                        vm.image = await _picker.pickImage(
+                                            source: ImageSource.gallery);
+                                        vm.stateUpdate();
+                                      }
+                                    : null,
                                 child: const Text('Изменить фото'),
                               ),
                             )
