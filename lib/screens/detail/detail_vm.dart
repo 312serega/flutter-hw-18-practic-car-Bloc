@@ -26,8 +26,6 @@ class DetailVM extends ChangeNotifier {
   }
 
   void stateUpdate() {
-    print(image!.path);
-
     notifyListeners();
   }
 }
